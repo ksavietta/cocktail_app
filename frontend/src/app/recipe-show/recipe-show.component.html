@@ -1,3 +1,16 @@
-<p>
+<div>
   {{recipe.name}}
-</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Ingredients</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let ingredient of ingredients">
+        {{ingredient.name}}
+      </tr>
+    </tbody>
+  </table>
+</div>
