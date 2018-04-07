@@ -4,16 +4,13 @@
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>Actions</th>
-          <th *ngFor="let column of columns">
-          </th>
+          <th>Recipes</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let row of rows" (click)="show(row['id'])">
-          {{row.name}}
-          <button (click)="delete(row['id'])">delete</button> ||
-          <button (click)="update(row['id'])">update</button>
+          <td>{{row.name}}</td>
+          <td><button class="btn btn-primary btn-sm" (click)="update(row['id'])">update</button></td>
         </tr>
       </tbody>
     </table>
