@@ -25,6 +25,7 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     // import HttpClientModule after BrowserModule.
     HttpClientModule,
     RouterModule.forRoot([
