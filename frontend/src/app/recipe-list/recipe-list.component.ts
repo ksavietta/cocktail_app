@@ -9,8 +9,7 @@ import { Recipe } from '../models/recipe';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-  public columns = ['id','name'];
-  public rows : Array<Recipe>;
+  public recipes : Array<Recipe>;
 
   constructor(public apiService: ApiService , public router : Router) {
   }
@@ -18,7 +17,7 @@ export class RecipeListComponent implements OnInit {
   ngOnInit() {
     this.apiService.get("recipes").subscribe((data: Recipe[]) =>{
       console.log(data);
-      this.rows = data;
+      this.recipes = data;
     })
   }
 
