@@ -1,4 +1,4 @@
-export class Customer{
+export class Product {
     public id:number;
     public name:string;
 }

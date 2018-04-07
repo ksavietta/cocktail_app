@@ -6,6 +6,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ApiService } from './api.service';
+import { HomeComponent } from './home/home.component';
+import { RecipeListComponent } from './recipe-list/recipe-list.component';
+
 import { ProductAddComponent } from './product-add/product-add.component';
 import { ProductListComponent } from './product-list/product-list.component';
 
@@ -13,7 +16,9 @@ import { ProductListComponent } from './product-list/product-list.component';
   declarations: [
     AppComponent,
     ProductAddComponent,
-    ProductListComponent
+    ProductListComponent,
+    RecipeListComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -21,6 +26,14 @@ import { ProductListComponent } from './product-list/product-list.component';
     // import HttpClientModule after BrowserModule.
     HttpClientModule,
     RouterModule.forRoot([
+      {
+        path: 'home',
+        component: HomeComponent
+      },
+      {
+        path: 'recipes',
+        component: RecipeListComponent
+      },
       {
         path: 'products',
         component: ProductListComponent
