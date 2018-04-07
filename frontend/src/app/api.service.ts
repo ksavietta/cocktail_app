@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable()
 export class ApiService {
@@ -8,10 +8,18 @@ export class ApiService {
   constructor(public http: HttpClient) { }
 
   // read method
-  public get(path) {
+  public get(path, params?) {
 
       var endpoint = this.API_URL + path;
-      return this.http.get(endpoint);
+      let parameters = new HttpParams();
+
+      // TODO: Make this more general
+      if (params !== undefined && params.toString() !== "") {
+        parameters = parameters.append('recipeId', params.recipeId);
+      }
+
+    // Make the API call using the new parameters.
+    return this.http.get(endpoint, {params: parameters});
 
   }
   // create method
