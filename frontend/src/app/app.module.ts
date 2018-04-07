@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -11,6 +11,35 @@ import { RecipeListComponent } from './recipe-list/recipe-list.component';
 
 import { ProductAddComponent } from './product-add/product-add.component';
 import { ProductListComponent } from './product-list/product-list.component';
+
+const appRoutes: Routes = [
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: 'recipes',
+    component: RecipeListComponent
+  },
+  {
+    path: 'products',
+    component: ProductListComponent
+  },
+  {
+    path: 'products/add',
+    component: ProductAddComponent
+  },
+  {
+    path: 'products/add/:id',
+    component: ProductAddComponent
+  }
+]
+
 
 @NgModule({
   declarations: [
@@ -25,28 +54,7 @@ import { ProductListComponent } from './product-list/product-list.component';
     FormsModule,
     // import HttpClientModule after BrowserModule.
     HttpClientModule,
-    RouterModule.forRoot([
-      {
-        path: 'home',
-        component: HomeComponent
-      },
-      {
-        path: 'recipes',
-        component: RecipeListComponent
-      },
-      {
-        path: 'products',
-        component: ProductListComponent
-      },
-      {
-        path: 'products/add',
-        component: ProductAddComponent
-      },
-      {
-        path: 'products/add/:id',
-        component: ProductAddComponent
-      }
-    ]),
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
