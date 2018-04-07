@@ -3,9 +3,9 @@ class RecipeIngredientsController < ApplicationController
 
   # GET /recipe_ingredients
   def index
-    @recipe_ingredients = RecipeIngredient.all
+    @recipe_ingredients = RecipeIngredient.where(index_params).all
 
-    render json: @recipe_ingredients
+    render json: @recipe_ingredients.map(&:ingredient)
   end
 
   # GET /recipe_ingredients/1
@@ -42,6 +42,10 @@ class RecipeIngredientsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_recipe_ingredient
       @recipe_ingredient = RecipeIngredient.find(params[:id])
+    end
+
+    def index_params
+      params.permit(:recipe_id)
     end
 
     # Only allow a trusted parameter "white list" through.
