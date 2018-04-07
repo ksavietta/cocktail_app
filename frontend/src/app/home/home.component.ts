@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  public defaultPic: string = '../../assets/images/home/image1.jpg';
 
   constructor() { }
 
