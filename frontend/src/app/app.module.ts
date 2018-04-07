@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { ApiService } from './api.service';
 import { HomeComponent } from './home/home.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
+import { RecipeShowComponent } from './recipe-show/recipe-show.component';
 
 import { ProductAddComponent } from './product-add/product-add.component';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -25,6 +26,10 @@ const appRoutes: Routes = [
   {
     path: 'recipes',
     component: RecipeListComponent
+  },
+  {
+    path: 'recipes/:id',
+    component: RecipeShowComponent
   },
   {
     path: 'products',
@@ -47,7 +52,8 @@ const appRoutes: Routes = [
     ProductAddComponent,
     ProductListComponent,
     RecipeListComponent,
-    HomeComponent
+    RecipeShowComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

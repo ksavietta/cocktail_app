@@ -22,4 +22,9 @@ export class RecipeListComponent implements OnInit {
     })
   }
 
+  public show(id:string) {
+    console.log("show : " + id );
+    this.router.navigateByUrl('/recipes/' + id);
+  }
+
 }

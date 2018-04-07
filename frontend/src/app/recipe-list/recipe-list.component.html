@@ -10,7 +10,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let row of rows">
+        <tr *ngFor="let row of rows" (click)="show(row['id'])">
           {{row.name}}
           <button (click)="delete(row['id'])">delete</button> ||
           <button (click)="update(row['id'])">update</button>
