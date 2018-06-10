@@ -6,7 +6,10 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { Angular2TokenService } from 'angular2-token';
 
+// ngx-bootstrap modules
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 
 import { AppComponent } from './app.component';
 import { ApiService } from './api.service';
@@ -63,6 +66,7 @@ const appRoutes: Routes = [
     ToolbarComponent,
     AuthDialogComponent,
   ],
+  entryComponents: [AuthDialogComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -71,6 +75,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     BsDropdownModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [ApiService, Angular2TokenService],
   bootstrap: [AppComponent]
