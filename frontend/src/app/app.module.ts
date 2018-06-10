@@ -17,6 +17,7 @@ import { RecipeShowComponent } from './recipe-show/recipe-show.component';
 import { ProductAddComponent } from './product-add/product-add.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { AuthDialogComponent } from './auth-dialog/auth-dialog.component';
 
 const appRoutes: Routes = [
   {
@@ -60,6 +61,7 @@ const appRoutes: Routes = [
     RecipeShowComponent,
     HomeComponent,
     ToolbarComponent,
+    AuthDialogComponent,
   ],
   imports: [
     BrowserModule,
