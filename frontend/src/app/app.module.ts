@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
 import { AppComponent } from './app.component';
 import { ApiService } from './api.service';
 import { HomeComponent } from './home/home.component';
@@ -61,6 +63,7 @@ const appRoutes: Routes = [
     // import HttpClientModule after BrowserModule.
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
+    BsDropdownModule.forRoot(),
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

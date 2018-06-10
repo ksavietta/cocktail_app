@@ -7,7 +7,7 @@ import { Ingredient } from '../models/ingredient';
 @Component({
   selector: 'app-recipe-show',
   templateUrl: './recipe-show.component.html',
-  styleUrls: ['./recipe-show.component.css']
+  styleUrls: ['./recipe-show.component.sass']
 })
 export class RecipeShowComponent implements OnInit {
   public recipe : Recipe  = new Recipe();
