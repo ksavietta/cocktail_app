@@ -1,3 +1,5 @@
+User.create(email: 'user@example.com', nickname: 'banana', name: 'User One', password: "firstpass")
+
 Product.create!([
   { name: 'Product 001' },
   { name: 'Product 002' },

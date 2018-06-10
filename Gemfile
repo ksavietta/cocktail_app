@@ -22,6 +22,10 @@ gem 'puma', '~> 3.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Devise user authentication for use with client side single page apps
+gem 'devise_token_auth', '~> 0.1.37'
+#A generalized Rack framework for multiple-provider authentication. Devise dependency.
+gem 'omniauth', '~> 1.8', '>= 1.8.1'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 
