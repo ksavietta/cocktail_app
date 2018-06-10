@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
-import { Angular2TokenService, A2tUiModule } from 'angular2-token';
+import { Angular2TokenService } from 'angular2-token';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
@@ -16,6 +16,7 @@ import { RecipeShowComponent } from './recipe-show/recipe-show.component';
 
 import { ProductAddComponent } from './product-add/product-add.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 const appRoutes: Routes = [
   {
@@ -58,9 +59,9 @@ const appRoutes: Routes = [
     RecipeListComponent,
     RecipeShowComponent,
     HomeComponent,
+    ToolbarComponent,
   ],
   imports: [
-    A2tUiModule,
     BrowserModule,
     FormsModule,
     HttpModule,
