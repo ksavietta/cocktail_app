@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { BsModalService } from 'ngx-bootstrap/modal';
-import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthDialogComponent } from '../auth-dialog/auth-dialog.component'
 
 @Component({
@@ -9,15 +7,14 @@ import { AuthDialogComponent } from '../auth-dialog/auth-dialog.component'
   styleUrls: ['./toolbar.component.sass']
 })
 export class ToolbarComponent implements OnInit {
-  modalRef: BsModalRef;
+  @ViewChild('authDialog') authDialog: AuthDialogComponent;
 
-  constructor(private modalService: BsModalService) { }
+  constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
-  openConfirmDialog() {
-    this.modalRef = this.modalService.show(AuthDialogComponent);
+  presentAuthDialog(mode?: 'login'| 'register'){
+    this.authDialog.openDialog();
   }
 
 }
