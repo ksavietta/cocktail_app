@@ -10,11 +10,10 @@ export class ToolbarComponent implements OnInit {
   @ViewChild('authDialog') authDialog: AuthDialogComponent;
 
   constructor() { }
-
   ngOnInit() { }
 
   presentAuthDialog(mode?: 'login'| 'register'){
-    this.authDialog.openDialog();
+    this.authDialog.openDialog(mode);
   }
 
 }

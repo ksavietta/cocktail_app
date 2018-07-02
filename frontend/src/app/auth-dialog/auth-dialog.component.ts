@@ -17,11 +17,7 @@ export class AuthDialogComponent implements OnInit {
   constructor(private modalService: BsModalService) { }
   ngOnInit() {}
 
-  isLoginMode(){return this.authMode == 'login'}
-  isRegisterMode(){return this.authMode == 'register'}
-
   openDialog(mode: 'login' | 'register' = 'login') {
-    this.authMode = mode;
     const initialState = {
       list: [
         'Open a modal with component',
@@ -29,6 +25,7 @@ export class AuthDialogComponent implements OnInit {
         'Do something else',
         '...'
       ],
+      authMode: mode,
       title: 'Modal with component'
     };
     this.modalRef = this.modalService.show(AuthDialogContentComponent, {initialState});
