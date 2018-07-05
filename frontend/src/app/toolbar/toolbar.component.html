@@ -6,24 +6,23 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav mr-auto">
-        Logged In?: {{tokenAuthService.userSignedIn()}}
         <li class="nav-item" [routerLinkActive]="['active']">
           <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item" [routerLinkActive]="['active']">
           <a class="nav-link" routerLink="/recipes">Recipes</a>
         </li>
-        <li *ngIf="!tokenAuthService.userSignedIn()" class="nav-item" [routerLinkActive]="['active']">
+        <li *ngIf="!(authService.userSignedIn$ | async)" class="nav-item" [routerLinkActive]="['active']">
           <a class="nav-link" (click)="presentAuthDialog('login')">LOGIN</a>
         </li>
-        <li *ngIf="!tokenAuthService.userSignedIn()" class="nav-item" [routerLinkActive]="['active']">
+        <li *ngIf="!(authService.userSignedIn$ | async)" class="nav-item" [routerLinkActive]="['active']">
           <a class="nav-link" (click)="presentAuthDialog('register')">REGISTER</a>
         </li>
-        <li *ngIf="tokenAuthService.userSignedIn()" class="nav-item" [routerLinkActive]="['active']">
-          <a class="nav-link">PROFILE</a>
+        <li *ngIf="(authService.userSignedIn$ | async)" class="nav-item" [routerLinkActive]="['active']">
+          <a [routerLink]="['/profile']" class="nav-link">PROFILE</a>
         </li>
-        <li *ngIf="tokenAuthService.userSignedIn()" class="nav-item" [routerLinkActive]="['active']">
-          <a class="nav-link">LOGOUT</a>
+        <li *ngIf="(authService.userSignedIn$ | async)" class="nav-item" [routerLinkActive]="['active']">
+          <a (click)="logOut()" class="nav-link">LOGOUT</a>
         </li>
       </ul>
     </div>
