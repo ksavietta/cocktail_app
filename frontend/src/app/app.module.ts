@@ -10,9 +10,9 @@ import { Angular2TokenService } from 'angular2-token';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
-
 import { AppComponent } from './app.component';
-import { ApiService } from './api.service';
+import { ApiService } from './services/api.service';
+import { AuthService } from './services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { RecipeShowComponent } from './recipe-show/recipe-show.component';
@@ -83,7 +83,7 @@ const appRoutes: Routes = [
     BsDropdownModule.forRoot(),
     ModalModule.forRoot()
   ],
-  providers: [ApiService, Angular2TokenService],
+  providers: [ApiService, Angular2TokenService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
