@@ -6,11 +6,16 @@
     </button>
   </div>
   <div class="modal-body">
-    <ul *ngIf="list.length">
-      <li *ngFor="let item of list">{{item}}</li>
-    </ul>
     <div class="row">
       Current mode: {{authMode}}
+    </div>
+    <div class="row">
+      <app-login-form (onFormResult)="onLoginFormResult($event)"
+                      *ngIf="isLoginMode()">
+      </app-login-form>
+      <app-register-form (onFormResult)="onRegisterFormResult($event)"
+                         *ngIf="isRegisterMode()">
+      </app-register-form>
     </div>
     <div class="row">
       <span *ngIf="isLoginMode()">

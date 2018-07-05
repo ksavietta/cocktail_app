@@ -14,4 +14,21 @@ export class AuthDialogContentComponent implements OnInit {
   isLoginMode(){return this.authMode == 'login'}
   isRegisterMode(){return this.authMode == 'register'}
 
+  onLoginFormResult(e){
+    if(e.signedIn)
+      this.bsModalRef.hide();
+    else{
+      alert(e.err.json().errors[0])
+    }
+  }
+
+  onRegisterFormResult(e){
+    if(e.signedUp)
+      this.bsModalRef.hide();
+    else{
+      alert(e.err.json().errors.full_messages[0])
+    }
+  }
+
+
 }

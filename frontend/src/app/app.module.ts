@@ -22,6 +22,8 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { AuthDialogComponent } from './auth-dialog/auth-dialog.component';
 import { AuthDialogContentComponent } from './auth-dialog-content/auth-dialog-content.component';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { RegisterFormComponent } from './register-form/register-form.component';
 
 const appRoutes: Routes = [
   {
@@ -67,6 +69,8 @@ const appRoutes: Routes = [
     ToolbarComponent,
     AuthDialogComponent,
     AuthDialogContentComponent,
+    LoginFormComponent,
+    RegisterFormComponent,
   ],
   entryComponents: [AuthDialogContentComponent],
   imports: [
