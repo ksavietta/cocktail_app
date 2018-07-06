@@ -13,6 +13,8 @@ export class AuthDialogContentComponent implements OnInit {
 
   isLoginMode(){return this.authMode == 'login'}
   isRegisterMode(){return this.authMode == 'register'}
+  title(){return this.isLoginMode() ? 'Welcome back!' : 'Join Snifter!';
+}
 
   onLoginFormResult(e){
     if(e.signedIn)
@@ -29,6 +31,4 @@ export class AuthDialogContentComponent implements OnInit {
       alert(e.err.json().errors.full_messages[0])
     }
   }
-
-
 }

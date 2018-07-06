@@ -31,10 +31,10 @@
           style="color:red">
       Passwords must match
     </span>
-    <div class="col s12">
+    <div class="input-field col s12">
       <button type="submit"
               [disabled]="!(f.valid) || !(signUpUser.password == signUpUser.passwordConfirmation)"
-              class="waves-effect waves-light btn blue right">
+              class="btn btn-primary btn-sm">
         Sign up
       </button>
     </div>
