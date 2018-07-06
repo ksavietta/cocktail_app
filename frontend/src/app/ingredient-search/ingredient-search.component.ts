@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ingredient-search.component.sass']
 })
 export class IngredientSearchComponent implements OnInit {
-
+  public imageSrc1: string = '../../assets/images/home/image2.jpg';
   constructor() { }
 
   ngOnInit() {
