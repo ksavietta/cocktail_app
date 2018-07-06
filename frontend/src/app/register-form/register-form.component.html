@@ -1,6 +1,6 @@
 <form (ngSubmit)="onSignUpSubmit()" #f="ngForm" >
   <div class="row">
-    <div class="input-field col s12">
+    <div class="col">
       <input id="email"
              type="email"
              required
@@ -9,7 +9,7 @@
              class="validate">
       <label for="email">Email</label>
     </div>
-    <div class="input-field col s12">
+    <div class="col">
       <input id="password"
              type="password"
              required
@@ -18,7 +18,7 @@
              class="validate">
       <label for="password">Password</label>
     </div>
-    <div class="input-field col s12">
+    <div class="col">
       <input id="password_confirmation"
              type="password"
              required
@@ -31,7 +31,7 @@
           style="color:red">
       Passwords must match
     </span>
-    <div class="input-field col s12">
+    <div class="col">
       <button type="submit"
               [disabled]="!(f.valid) || !(signUpUser.password == signUpUser.passwordConfirmation)"
               class="btn btn-primary btn-sm">
