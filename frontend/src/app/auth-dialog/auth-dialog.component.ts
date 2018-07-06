@@ -19,8 +19,7 @@ export class AuthDialogComponent implements OnInit {
 
   openDialog(mode: 'login' | 'register' = 'login') {
     const initialState = {
-      authMode: mode,
-      title: 'Join Snifter!'
+      authMode: mode
     };
     this.modalRef = this.modalService.show(AuthDialogContentComponent, {initialState});
     this.modalRef.content.closeBtnName = 'Close';
