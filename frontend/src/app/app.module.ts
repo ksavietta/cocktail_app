@@ -23,6 +23,8 @@ import { AuthDialogComponent } from './auth-dialog/auth-dialog.component';
 import { AuthDialogContentComponent } from './auth-dialog-content/auth-dialog-content.component';
 import { BarComponent } from './bar/bar.component'
 import { HomeComponent } from './home/home.component';
+import { IngredientListComponent } from './ingredient-list/ingredient-list.component';
+import { IngredientSearchComponent } from './ingredient-search/ingredient-search.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { ProductAddComponent } from './product-add/product-add.component';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -88,6 +90,8 @@ const appRoutes: Routes = [
     LoginFormComponent,
     RegisterFormComponent,
     BarComponent,
+    IngredientListComponent,
+    IngredientSearchComponent,
   ],
   entryComponents: [AuthDialogContentComponent],
   imports: [
