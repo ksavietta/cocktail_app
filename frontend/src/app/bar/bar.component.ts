@@ -16,15 +16,14 @@ export class BarComponent implements OnInit {
   constructor(public apiService:ApiService, public authService:AuthService) { }
 
   ngOnInit() {
-    // let emailData = {userEmail: this.authService.uid()}
-    // this.apiService.get("ingredients", emailData).subscribe((data: Ingredient[]) =>{
-    //   console.log(data);
-    //   this.barIngredients = data;
-    // })
-    // this.apiService.get("ingredients").subscribe((data: Ingredient[]) =>{
-    //   console.log(data);
-    //   this.allIngredients = data;
-    // })
+    this.apiService.get("bar").subscribe((data: any) => {
+      console.log(data);
+      this.barIngredients = data;
+    })
+    this.apiService.get("ingredients").subscribe((data: any) => {
+      console.log(data);
+      this.allIngredients = data;
+    })
   }
 
 }

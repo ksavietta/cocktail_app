@@ -14,7 +14,7 @@ export class ApiService {
     //     res   =>    console.log(res),
     //     error =>    console.log(error)
     // );
-    return this.authTokenService.get(path, {params: params});
+    return this.authTokenService.get(path, {params: params}).map((data: any) => data.json());
   }
   public post(path:string,body:any) {
     return this.authTokenService.post(path, body);

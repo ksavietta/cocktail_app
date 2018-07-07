@@ -21,10 +21,10 @@ export class RecipeShowComponent implements OnInit {
       console.log(data.id);
       if (data && data.id) {
           this.apiService.get("recipes/"+data.id).subscribe((data : any) => {
-            this.recipe = data.json();
+            this.recipe = data;
           });
           this.apiService.get("recipe_ingredients/", {recipeId: data.id}).subscribe((data : any) => {
-            this.ingredients = data.json();
+            this.ingredients = data;
           });
       } else {
         this.recipe = new Recipe();

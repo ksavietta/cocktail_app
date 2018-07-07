@@ -2,6 +2,7 @@ class CreateBars < ActiveRecord::Migration[5.1]
   def change
     create_table :bars do |t|
       t.integer :user_id
+      t.boolean :default, default: false
       t.timestamps
     end
 
