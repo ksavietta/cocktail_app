@@ -10,16 +10,16 @@ Recipe.create!([
   { name: 'The Last Word' }
 ])
 Ingredient.create!([
-  { name: 'Lime' },
-  { name: 'Green Chartreuse' },
-  { name: 'Tequila' },
-  { name: 'Mezcal' },
-  { name: 'Maraschino Liquer' },
-  { name: 'Triple Sec'},
-  { name: 'Sugar'}
+  { name: 'Lime', description: 'a green citrus fruit' },
+  { name: 'Green Chartreuse', description: 'a French liqueur made by the Carthusian Monks since 1737'},
+  { name: 'Tequila', description: ' a regional distilled beverage and type of alcoholic drink made from the blue agave plant, primarily in the area surrounding the city of Tequila'},
+  { name: 'Mezcal', description: 'a distilled alcoholic beverage made from any type of agave'},
+  { name: 'Maraschino Liquer', description: 'a liqueur obtained from the distillation of Marasca cherries'},
+  { name: 'Triple Sec', description: 'a strong, sweet and colorless orange flavored liqueur'},
+  { name: 'Sugar', description: 'the generic name for sweet-tasting, soluble carbohydrates'}
 ])
 
-bar = Bar.create(user_id: user.id)
+bar = Bar.create(user_id: user.id, default: true)
 ingredients = Ingredient.where(name: ['Lime', 'Tequila', 'Sugar'])
 ingredients.each {|ingredient| BarIngredient.create!(bar_id: bar.id, ingredient_id:ingredient.id)}
 

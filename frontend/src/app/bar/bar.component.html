@@ -15,11 +15,11 @@
         </div>
         <div class='row'>
           <div class='col-sm-4' *ngFor='let ingredientChunk of chunkedIngredients'>
-            <div *ngFor='let ingredient of ingredientChunk' class="card border-primary mb-3" style="max-width: 20rem;">
+            <div *ngFor='let ingredient of ingredientChunk' class="card border-primary mb-3" style="max-width: 20rem; height: 18rem;">
               <div class="card-header">{{ingredient.name}}</div>
               <div class="card-body">
-                <img style="height: 200px; width: 100%; display: block;" [src]="imageSrc1" class="img-responsive" alt="Responsive image"/>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <img style="height: 10rem; width: 100%; display: block;" [src]="imageSrc1" class="img-responsive" alt="Responsive image"/>
+                <p class="card-text">{{displayDesc(ingredient.description)}}</p>
               </div>
             </div>
           </div>

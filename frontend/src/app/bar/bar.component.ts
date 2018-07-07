@@ -39,4 +39,13 @@ export class BarComponent implements OnInit {
       return tempArray;
     }
 
+    displayDesc(desc) {
+      let max = 75;
+      let display = desc;
+      if (display.length > max) {
+        display = display.substring(0, max) + '...'
+      }
+      return display;
+    }
+
 }
