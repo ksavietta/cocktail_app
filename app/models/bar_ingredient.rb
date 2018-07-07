@@ -1,0 +1,2 @@
+class BarIngredient < ApplicationRecord
+end

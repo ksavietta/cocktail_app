@@ -1,5 +1,4 @@
-User.create(email: 'user@example.com', nickname: 'banana', name: 'User One', password: "firstpass")
-
+user = User.create(email: 'user@example.com', nickname: 'banana', name: 'User One', password: "firstpass")
 Product.create!([
   { name: 'Product 001' },
   { name: 'Product 002' },
@@ -19,6 +18,10 @@ Ingredient.create!([
   { name: 'Triple Sec'},
   { name: 'Sugar'}
 ])
+
+bar = Bar.create(user_id: user.id)
+ingredients = Ingredient.where(name: ['Lime', 'Tequila', 'Sugar'])
+ingredients.each {|ingredient| BarIngredient.create!(bar_id: bar.id, ingredient_id:ingredient.id)}
 
 recipe = Recipe.find_by(name: 'Margarita')
 ingredients = Ingredient.where(name: ['Lime', 'Tequila', 'Triple Sec', 'Sugar'])
