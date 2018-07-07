@@ -10,20 +10,33 @@ import { Ingredient } from '../models/ingredient';
   styleUrls: ['./bar.component.sass']
 })
 export class BarComponent implements OnInit {
+  public imageSrc1: string = '../../assets/images/home/image2.jpg';
   public barIngredients : Array<Ingredient>;
   public allIngredients : Array<Ingredient>;
+  public chunkedIngredients : Array<any>;
 
   constructor(public apiService:ApiService, public authService:AuthService) { }
 
   ngOnInit() {
     this.apiService.get("bar").subscribe((data: any) => {
-      console.log(data);
       this.barIngredients = data;
     })
     this.apiService.get("ingredients").subscribe((data: any) => {
-      console.log(data);
       this.allIngredients = data;
+      this.chunkedIngredients = this.chunkArray(this.allIngredients, 3);
     })
   }
+
+  private
+    chunkArray(myArray, chunk_size){
+      let index = 0;
+      let arrayLength = myArray.length;
+      let tempArray = [];
+      for (index = 0; index < arrayLength; index += chunk_size) {
+          let myChunk = myArray.slice(index, index+chunk_size);
+          tempArray.push(myChunk);
+      }
+      return tempArray;
+    }
 
 }
