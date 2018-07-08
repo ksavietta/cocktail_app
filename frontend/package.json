@@ -2,6 +2,10 @@
   "name": "frontend",
   "version": "0.0.0",
   "license": "MIT",
+  "engines": {
+    "node": "8.11.1",
+    "npm": "5.8.0"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,7 +13,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --prod && npm start"
+    "heroku-postbuild": "cd frontend && npm install",
+    "postinstall": "cd frontend && ng build -prod"
   },
   "private": true,
   "devDependencies": {
