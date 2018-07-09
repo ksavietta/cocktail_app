@@ -8,13 +8,11 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild": "cd frontend && npm install",
-    "postinstall": "cd frontend && ng build -prod"
+    "heroku-postbuild": "ng build --aot -prod"
   },
   "private": true,
   "devDependencies": {
