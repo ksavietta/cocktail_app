@@ -10,5 +10,7 @@ class User < ActiveRecord::Base
   :omniauthable
 
   include DeviseTokenAuth::Concerns::User
-  
+  has_many :bars
+  has_one :bar, -> { where(default: true) }
+
 end
